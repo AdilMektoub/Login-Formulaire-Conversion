@@ -65,9 +65,24 @@ public class bienvenue extends HttpServlet {
 			request.getRequestDispatcher( "/bienvenue.jsp" ).forward( request, response ); // tu à la page bienvenue
 		}
 		
-		else { session.setAttribute( "isConnected", true ); //session est ok (vrai)
-		request.getRequestDispatcher( "/error.jsp" ).forward( request, response );
-		}
-	}
+//		else { session.setAttribute( "isConnected", true ); //session est ok (vrai)
+//		request.getRequestDispatcher( "/error.jsp" ).forward( request, response );
+//		}
+		// error si les mail et password ne sont pa égale
+		else {
+			
+			if (!email.equals("anis@pop.fr") || !email.equals("imen@pop.com") || !email.equals("inga@yahoo.fr")) {
+				errorMail = "L'adresse mail n'est pas bonne !";
+				System.out.println(errorMail);
+				session.setAttribute("errorMail", errorMail);
+			}
+			if (!password.equals("admin")) {
+				errorMail = "Le Password n'est pas bon !";
+				System.out.println(errorMail);
+				session.setAttribute("errorMail", errorMail);
+			}
+			doGet(request, response);
+			
+	}}}
 
-}
+
