@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +11,7 @@
 <h1>Bienvenue Mr ${login} </h1>
         <p>Ceci est une page générée depuis une JSP.</p>
         <p>
-            <% 
+            <%@ 
             String attribut = (String) request.getAttribute("login");
             out.println( attribut );
             %>

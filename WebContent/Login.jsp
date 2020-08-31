@@ -1,5 +1,5 @@
 <%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -14,9 +14,9 @@
             <label for='txtLogin'>Email :</label>
             <input id='txtLogin' name='txtLogin' type='text' value='${login}' autofocus /> <br/>
             <label for='txtPassword'>Password :</label>
-            <input name='txtPassword' type='password' value='<%= session.getAttribute("password")%>' /> <br/>
+            <input> name='txtPassword' type='password' value='<%@ session.getAttribute("password")%>' /> <br/>
             <br/>
-            <input name='btnConnect' type='submit' /> <br/>
+            <input> name='btnConnect' type='submit' /> <br/>
         </form>     
     </body>
 </html>
