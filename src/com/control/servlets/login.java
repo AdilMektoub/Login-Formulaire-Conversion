@@ -58,7 +58,7 @@ public class login extends HttpServlet {
 		session.setAttribute( "email", email );
 		session.setAttribute( "password", password );
 		session.setAttribute("errorMail", errorMail);
-		session.setAttribute("errorAge", errorPassword);
+		session.setAttribute("errorPassword", errorPassword);
 		request.setAttribute( "email", email );
 		request.setAttribute( "password", password );
 		
